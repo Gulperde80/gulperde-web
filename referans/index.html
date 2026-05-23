@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yaptığımız İşler | Gül Perde ve Ev Tekstili</title>
+  <meta name="description" content="Gül Perde'nin tamamladığı perde ve ev tekstili projeleri. Salon, yatak odası, ofis ve mutfak için özel tasarlanmış perde çözümlerimizi inceleyin.">
+  <link rel="canonical" href="https://gulperde.com.tr/referans/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #faf8f5;
+      --warm:    #f3ede4;
+      --border:  #e2d9ce;
+      --text:    #2c2420;
+      --text-2:  #6b5c52;
+      --text-3:  #a89080;
+      --accent:  #8b6f5e;
+      --accent-d:#6e5448;
+      --gold:    #c9a96e;
+      --white:   #ffffff;
+      --shadow:  0 4px 32px rgba(44,36,32,.10);
+      --r:       8px;
+      --r-lg:    14px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', system-ui, sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,248,245,.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 64px;
+    }
+    .logo { text-decoration: none; }
+    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--text); letter-spacing: -.3px; }
+    .logo-sub  { font-size: 11px; color: var(--text-3); display: block; letter-spacing: .5px; }
+    .hdr-nav { display: flex; gap: 28px; align-items: center; }
+    .hdr-nav a { font-size: 13px; font-weight: 400; color: var(--text-2); text-decoration: none; letter-spacing: .3px; transition: color .2s; }
+    .hdr-nav a:hover, .hdr-nav a.active { color: var(--text); }
+    .hdr-cta {
+      font-size: 13px; font-weight: 500; padding: 8px 18px;
+      background: var(--accent); color: #fff; border-radius: 30px;
+      text-decoration: none; transition: background .2s;
+    }
+    .hdr-cta:hover { background: var(--accent-d); }
+
+    /* ── HERO ── */
+    .page-hero {
+      background: var(--warm); border-bottom: 1px solid var(--border);
+      padding: 32px 24px 24px; text-align: center;
+    }
+    .eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 400;
+      line-height: 1.2; color: var(--text); margin-bottom: 8px;
+    }
+    .page-hero p { font-size: 13px; color: var(--text-2); max-width: 480px; margin: 0 auto; line-height: 1.6; }
+
+    /* ── FILTERS ── */
+    .filters-wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px 16px; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn {
+      padding: 7px 18px; border-radius: 30px; font-family: 'Jost', sans-serif;
+      font-size: 13px; font-weight: 400; cursor: pointer; border: 1px solid var(--border);
+      background: var(--white); color: var(--text-2); transition: all .18s;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ── GRID ── */
+    .grid-wrap { max-width: 1200px; margin: 0 auto; padding: 8px 24px 80px; }
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .ref-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r-lg); overflow: hidden;
+      box-shadow: 0 2px 12px rgba(44,36,32,.06);
+      transition: box-shadow .25s, transform .25s; cursor: pointer;
+    }
+    .ref-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .ref-card-thumb {
+      height: 220px; overflow: hidden; background: var(--warm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ref-card-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; display: block; }
+    .ref-card:hover .ref-card-thumb img { transform: scale(1.05); }
+    .ref-card-no-img {
+      height: 220px; display: flex; align-items: center; justify-content: center;
+      background: var(--warm); color: var(--text-3); font-size: 13px; flex-direction: column; gap: 8px;
+    }
+    .ref-card-body { padding: 20px 22px 22px; }
+    .ref-card-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+    .badge {
+      font-size: 11px; padding: 3px 10px; border-radius: 20px;
+      background: rgba(139,111,94,.1); color: var(--accent); font-weight: 500; letter-spacing: .2px;
+    }
+    .badge.city { background: var(--warm); color: var(--text-3); }
+    .badge.date { background: transparent; color: var(--text-3); padding-left: 0; }
+    .ref-card-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+    .ref-card-desc { font-size: 13px; color: var(--text-2); line-height: 1.65; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .ref-card-products { font-size: 12px; color: var(--text-3); margin-top: 10px; border-top: 1px solid var(--border); padding-top: 10px; }
+    .ref-card-products strong { color: var(--text-2); }
+
+    /* ── EMPTY ── */
+    .empty-state { text-align: center; padding: 80px 20px; color: var(--text-3); grid-column: 1/-1; }
+    .empty-state svg { margin: 0 auto 16px; display: block; opacity: .35; }
+    .empty-state p { font-size: 15px; }
+
+    /* ── LOADING ── */
+    .loading { text-align: center; padding: 80px; color: var(--text-3); grid-column: 1/-1; }
+    .spinner { width: 32px; height: 32px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .7s linear infinite; margin: 0 auto 16px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── LIGHTBOX ── */
+    .lightbox-overlay {
+      position: fixed; inset: 0; background: rgba(20,16,14,.92);
+      z-index: 1000; display: none; align-items: center; justify-content: center;
+      padding: 24px; animation: fadeIn .2s;
+    }
+    .lightbox-overlay.open { display: flex; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .lightbox {
+      background: var(--white); border-radius: var(--r-lg);
+      max-width: 900px; width: 100%; max-height: 90vh;
+      overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,.5);
+      animation: slideUp .25s ease;
+      display: flex; flex-direction: column;
+    }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .lb-img-wrap { position: relative; background: var(--warm); }
+    .lb-img-wrap img { width: 100%; max-height: 460px; object-fit: cover; display: block; border-radius: var(--r-lg) var(--r-lg) 0 0; }
+    .lb-thumbs { display: flex; gap: 8px; padding: 12px 24px; background: var(--warm); border-bottom: 1px solid var(--border); }
+    .lb-thumb { width: 60px; height: 44px; object-fit: cover; border-radius: 5px; cursor: pointer; opacity: .6; transition: opacity .15s; border: 2px solid transparent; }
+    .lb-thumb.active, .lb-thumb:hover { opacity: 1; border-color: var(--accent); }
+    .lb-body { padding: 28px 32px; }
+    .lb-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+    .lb-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .lb-section { margin-bottom: 18px; }
+    .lb-section-label { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-3); margin-bottom: 6px; }
+    .lb-section-text { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+    .lb-close {
+      position: absolute; top: 14px; right: 14px;
+      background: rgba(20,16,14,.6); border: none; color: #fff;
+      width: 36px; height: 36px; border-radius: 50%; font-size: 18px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .15s;
+    }
+    .lb-close:hover { background: rgba(20,16,14,.9); }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--text); color: rgba(255,255,255,.6); padding: 32px 24px; text-align: center; font-size: 13px; }
+    .site-footer a { color: rgba(255,255,255,.8); text-decoration: none; }
+    .site-footer a:hover { color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hdr-nav { display: none; }
+      .ref-grid { grid-template-columns: 1fr; }
+      .lb-body { padding: 20px 20px; }
+      .lb-title { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a href="/" class="logo">
+      <span class="logo-main">Gül Perde</span>
+      <span class="logo-sub">ve Ev Tekstili</span>
+    </a>
+    <nav class="hdr-nav">
+      <a href="/">Ana Sayfa</a>
+      <a href="/#products">Ürünler</a>
+      <a href="/blog/">Blog</a>
+      <a href="/referans/" class="active">Yaptığımız İşler</a>
+    </nav>
+    <a href="tel:+905556119343" class="hdr-cta">Hemen Ara</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <p class="eyebrow">Referanslarımız</p>
+  <h1>Yaptığımız İşler</h1>
+  <p>Müşterilerimiz için hayata geçirdiğimiz perde ve ev tekstili projelerinden seçkiler. Her proje, mekânın ihtiyacına özel tasarlanmıştır.</p>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-wrap">
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-filter="all">Tümü</button>
+    <button class="filter-btn" data-filter="salon">Salon</button>
+    <button class="filter-btn" data-filter="yatak-odasi">Yatak Odası</button>
+    <button class="filter-btn" data-filter="ofis">Ofis</button>
+    <button class="filter-btn" data-filter="mutfak">Mutfak</button>
+    <button class="filter-btn" data-filter="cocuk-odasi">Çocuk Odası</button>
+    <button class="filter-btn" data-filter="diger">Diğer</button>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid-wrap">
+  <div class="ref-grid" id="ref-grid">
+    <div class="loading"><div class="spinner"></div><p>Yükleniyor…</p></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox" id="lb-inner">
+    <div class="lb-img-wrap">
+      <img id="lb-main-img" src="" alt="">
+      <button class="lb-close" onclick="closeLightbox()">✕</button>
+    </div>
+    <div id="lb-thumbs-wrap" class="lb-thumbs"></div>
+    <div class="lb-body">
+      <div class="lb-title" id="lb-title"></div>
+      <div class="lb-meta" id="lb-meta"></div>
+      <div class="lb-section" id="lb-products-section">
+        <div class="lb-section-label">Kullanılan Ürünler</div>
+        <div class="lb-section-text" id="lb-products"></div>
+      </div>
+      <div class="lb-section" id="lb-desc-section">
+        <div class="lb-section-label">Proje Hakkında</div>
+        <div class="lb-section-text" id="lb-desc"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© 2025 <a href="/">Gül Perde ve Ev Tekstili</a> · Osmaniye · <a href="tel:+905556119343">0555 611 9343</a></p>
+</footer>
+
+<script>
+const ROOM_LABELS = {
+  'salon':'Salon','yatak-odasi':'Yatak Odası','ofis':'Ofis',
+  'mutfak':'Mutfak','cocuk-odasi':'Çocuk Odası','diger':'Diğer'
+};
+
+let allRefs = [];
+let activeFilter = 'all';
+
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatDate(d) {
+  if (!d) return '';
+  const p = d.split('-');
+  if (p.length < 2) return d;
+  const mo = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+  return `${mo[parseInt(p[1])-1]} ${p[0]}`;
+}
+
+async function loadRefs() {
+  try {
+    const res = await fetch('/blog/posts/referans.json?t=' + Date.now());
+    allRefs = res.ok ? await res.json() : [];
+  } catch { allRefs = []; }
+  renderGrid();
+}
+
+function renderGrid() {
+  const grid = document.getElementById('ref-grid');
+  const filtered = activeFilter === 'all'
+    ? allRefs
+    : allRefs.filter(r => r.roomType === activeFilter);
+
+  const sorted = [...filtered].reverse();
+
+  if (!sorted.length) {
+    grid.innerHTML = `<div class="empty-state"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><p>${allRefs.length ? 'Bu kategoride proje bulunamadı.' : 'Henüz proje eklenmemiş.'}</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = sorted.map((r, i) => {
+    const origIdx = allRefs.indexOf(r);
+    const thumb = r.cover
+      ? `<img src="${esc(r.cover)}" alt="${esc(r.title)}" loading="lazy">`
+      : `<div class="ref-card-no-img"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Görsel yok</span></div>`;
+    return `<div class="ref-card" onclick="openLightbox(${origIdx})">
+      <div class="ref-card-thumb">${thumb}</div>
+      <div class="ref-card-body">
+        <div class="ref-card-meta">
+          ${r.roomType ? `<span class="badge">${esc(ROOM_LABELS[r.roomType]||r.roomType)}</span>` : ''}
+          ${r.city     ? `<span class="badge city">${esc(r.city)}</span>` : ''}
+          ${r.date     ? `<span class="badge date">${formatDate(r.date)}</span>` : ''}
+        </div>
+        <div class="ref-card-title">${esc(r.title||'İsimsiz Proje')}</div>
+        ${r.description ? `<div class="ref-card-desc">${esc(r.description)}</div>` : ''}
+        ${r.products ? `<div class="ref-card-products"><strong>Ürünler:</strong> ${esc(r.products)}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── FILTERS ── */
+document.getElementById('filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter = btn.dataset.filter;
+  renderGrid();
+});
+
+/* ── LIGHTBOX ── */
+function openLightbox(idx) {
+  const r = allRefs[idx]; if (!r) return;
+  const images = Array.isArray(r.images) && r.images.length ? r.images : (r.cover ? [{url:r.cover}] : []);
+
+  const mainImg = document.getElementById('lb-main-img');
+  mainImg.src = images.length ? images[0].url : '';
+  mainImg.alt = r.title || '';
+
+  // Thumbnails
+  const thumbsWrap = document.getElementById('lb-thumbs-wrap');
+  if (images.length > 1) {
+    thumbsWrap.style.display = 'flex';
+    thumbsWrap.innerHTML = images.map((img, i) =>
+      `<img class="lb-thumb${i===0?' active':''}" src="${esc(img.url)}" alt="" onclick="switchLbImg(this, '${esc(img.url)}')">`
+    ).join('');
+  } else {
+    thumbsWrap.style.display = 'none';
+    thumbsWrap.innerHTML = '';
+  }
+
+  document.getElementById('lb-title').textContent = r.title || '';
+
+  // Meta badges
+  const meta = document.getElementById('lb-meta');
+  meta.innerHTML = [
+    r.roomType ? `<span class="badge">${esc(ROOM_LABELS[r.roomType]||r.roomType)}</span>` : '',
+    r.city     ? `<span class="badge city">${esc(r.city)}</span>` : '',
+    r.date     ? `<span class="badge date">${formatDate(r.date)}</span>` : ''
+  ].join('');
+
+  const prodSec = document.getElementById('lb-products-section');
+  if (r.products) {
+    document.getElementById('lb-products').textContent = r.products;
+    prodSec.style.display = '';
+  } else { prodSec.style.display = 'none'; }
+
+  const descSec = document.getElementById('lb-desc-section');
+  if (r.description) {
+    document.getElementById('lb-desc').textContent = r.description;
+    descSec.style.display = '';
+  } else { descSec.style.display = 'none'; }
+
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function switchLbImg(thumb, url) {
+  document.getElementById('lb-main-img').src = url;
+  document.querySelectorAll('.lb-thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+
+function closeLightbox(e) {
+  if (e && e.target !== document.getElementById('lightbox')) return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+});
+
+loadRefs();
+</script>
+<script src="/kvkk.js"></script>
+</body>
+</html>
