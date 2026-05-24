@@ -29,17 +29,34 @@ address { font-style: normal; }
 
 /* ── CSS VARIABLES ──────────────────────────────────────── */
 :root {
-  /* Palette */
-  --ivory:        #FAF8F4;
-  --warm:         #F2ECE3;
+  /* Light Palette */
+  --ivory:        #FAF9F6;
+  --warm:         #F3EDE5;
   --white:        #FFFFFF;
+
+  /* Dark Palette — Obsidian & Champagne */
+  --obsidian:     #0C0A09;
+  --deep:         #16130F;
+  --warm-dark:    #211D18;
+
+  /* Text */
   --charcoal:     #1C1A17;
   --charcoal-2:   #3A3733;
   --gray-mid:     #7A7570;
   --gray-light:   #C6C0B8;
   --border:       #E5DDD4;
-  --gold:         #A87C45;
-  --gold-hover:   #8F6835;
+  --border-dark:  rgba(201,169,110,0.18);
+
+  /* Champagne Gold */
+  --gold:         #C9A96E;
+  --gold-hover:   #B08A50;
+  --champagne-lt: #E8D5B0;
+
+  /* Text on dark */
+  --text-on-dark:     #F0EBE3;
+  --text-on-dark-mid: #A89E92;
+
+  /* WhatsApp */
   --green-wa:     #25D366;
   --green-wa-hov: #1da851;
 
@@ -59,8 +76,8 @@ address { font-style: normal; }
   /* Misc */
   --radius:    3px;
   --radius-md: 6px;
-  --shadow:    0 4px 32px rgba(28,26,23,.08);
-  --shadow-lg: 0 12px 48px rgba(28,26,23,.13);
+  --shadow:    0 4px 32px rgba(12,10,9,.15);
+  --shadow-lg: 0 12px 48px rgba(12,10,9,.25);
   --hdr-h:     72px;
 }
 
@@ -72,8 +89,8 @@ h1, h2, h3, h4 {
   color: var(--charcoal);
 }
 
-h1 { font-size: clamp(40px, 6vw, 72px); letter-spacing: -.02em; }
-h2 { font-size: clamp(32px, 4vw, 52px); letter-spacing: -.01em; }
+h1 { font-size: clamp(40px, 6vw, 80px); letter-spacing: -.03em; }
+h2 { font-size: clamp(32px, 4vw, 58px); letter-spacing: -.02em; }
 h3 { font-size: clamp(22px, 2.5vw, 30px); }
 
 p { color: var(--charcoal-2); }
@@ -175,7 +192,7 @@ p { color: var(--charcoal-2); }
   top: 0; left: 0; right: 0;
   height: var(--hdr-h);
   z-index: 900;
-  background: rgba(250,248,244,.92);
+  background: rgba(250,249,246,.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
@@ -359,7 +376,7 @@ p { color: var(--charcoal-2); }
 
 .hero-title {
   color: var(--white);
-  font-size: clamp(44px, 7vw, 82px);
+  font-size: clamp(48px, 7.5vw, 94px);
   margin-bottom: 20px;
   letter-spacing: -.03em;
 }
@@ -1050,4 +1067,71 @@ textarea { resize: vertical; min-height: 110px; }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { justify-content: center; }
   .products-grid { grid-template-columns: 1fr; }
+}
+
+/* ── DARK SECTIONS — Obsidian & Champagne ─────────── */
+.bg-dark     { background: var(--deep); }
+.bg-obsidian { background: var(--obsidian); }
+.bg-dark-warm{ background: var(--warm-dark); }
+
+.bg-dark h1,.bg-dark h2,.bg-dark h3,.bg-dark h4,
+.bg-obsidian h1,.bg-obsidian h2,.bg-obsidian h3,.bg-obsidian h4,
+.bg-dark-warm h1,.bg-dark-warm h2,.bg-dark-warm h3,.bg-dark-warm h4 { color: var(--text-on-dark); }
+
+.bg-dark p,.bg-obsidian p,.bg-dark-warm p { color: var(--text-on-dark-mid); }
+
+.bg-dark .eyebrow,.bg-obsidian .eyebrow,.bg-dark-warm .eyebrow { color: var(--gold); }
+
+.bg-dark .section-header h2,
+.bg-obsidian .section-header h2,
+.bg-dark-warm .section-header h2 { color: var(--text-on-dark); }
+
+.bg-dark .prod-card { border: 1px solid rgba(201,169,110,.1); }
+
+.bg-dark .step-num,.bg-dark-warm .step-num { color: rgba(201,169,110,.18); }
+.bg-dark .process-step:hover .step-num,
+.bg-dark-warm .process-step:hover .step-num { color: var(--gold); }
+.bg-dark .step-connector,.bg-dark-warm .step-connector { background: rgba(201,169,110,.15); }
+.bg-dark .process-step h3,.bg-dark-warm .process-step h3 { color: var(--text-on-dark); }
+
+.bg-dark-warm .why-card { background: rgba(255,255,255,.04); border-color: var(--border-dark); }
+.bg-dark-warm .why-card:hover {
+  border-color: var(--gold);
+  background: rgba(201,169,110,.07);
+  box-shadow: 0 8px 40px rgba(0,0,0,.4);
+  transform: translateY(-4px);
+}
+.bg-dark-warm .why-card h3 { color: var(--text-on-dark); }
+.bg-dark-warm .why-card p  { color: var(--text-on-dark-mid); }
+.bg-dark-warm .why-icon { background: rgba(201,169,110,.12); color: var(--gold); }
+
+.bg-obsidian .gal-item { border: 1px solid rgba(201,169,110,.06); }
+
+.review-card { border-color: rgba(201,169,110,.15); }
+.review-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(201,169,110,.12); }
+.stars { color: var(--gold); letter-spacing: 3px; }
+
+.bg-dark .insta-cta-cell { background: var(--warm-dark); border: 1px solid var(--border-dark); }
+
+.site-footer { background: var(--obsidian); }
+.footer-social a:hover { background: var(--gold); }
+.footer-col a:hover { color: var(--gold); }
+
+.section-divider {
+  display: block;
+  width: 48px;
+  height: 1.5px;
+  background: var(--gold);
+  margin: 0 auto 16px;
+}
+
+/* 10 yorum grid */
+@media (min-width: 861px) {
+  .reviews-grid { grid-template-columns: repeat(5, 1fr); }
+}
+@media (max-width: 860px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .reviews-grid { grid-template-columns: 1fr; }
 }
